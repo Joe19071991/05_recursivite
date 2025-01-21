@@ -53,4 +53,14 @@ const afficherDossier = () => {
   return dossierPrincipal.nom;
 };
 
-console.log(afficherDossier());
+// console.log(afficherDossier());
+
+const afficherDossierIteratif = () => {
+  console.log(dossierPrincipal.nom);
+  for (let item of dossierPrincipal.contenu) {
+    console.log(item.nom);
+  }
+};
+afficherDossierIteratif();
+
+// const afficherDossierRecursif = () => {};
