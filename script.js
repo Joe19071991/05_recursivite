@@ -45,9 +45,9 @@ const dossierPrincipal = {
   ],
 };
 
-// console.log(dossierPrincipal.nom);
+console.log(dossierPrincipal.nom);
 // console.log(typeof dossierPrincipal);
-// console.log(dossierPrincipal);
+console.log(dossierPrincipal);
 
 const afficherDossier = () => {
   return dossierPrincipal.nom;
@@ -57,10 +57,19 @@ const afficherDossier = () => {
 
 const afficherDossierIteratif = () => {
   console.log(dossierPrincipal.nom);
-  for (let item of dossierPrincipal.contenu) {
-    console.log(item.nom);
+  for (let dossier of dossierPrincipal.contenu) {
+    console.log(dossier.nom);
   }
 };
 afficherDossierIteratif();
 
-// const afficherDossierRecursif = () => {};
+const afficherDossierRecursif = (dossier) => {
+  if (dossier.contenu === undefined) {
+    return;
+  }
+  for (let item of dossier.contenu) {
+    console.log(item.nom);
+    afficherDossierRecursif(item);
+  }
+};
+afficherDossierRecursif(dossierPrincipal);
