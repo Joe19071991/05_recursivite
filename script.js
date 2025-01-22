@@ -45,31 +45,42 @@ const dossierPrincipal = {
   ],
 };
 
-console.log(dossierPrincipal.nom);
-// console.log(typeof dossierPrincipal);
-console.log(dossierPrincipal);
+// console.log(dossierPrincipal.nom);
+// // console.log(typeof dossierPrincipal);
+// console.log(dossierPrincipal);
 
-const afficherDossier = () => {
-  return dossierPrincipal.nom;
-};
+// const afficherDossier = () => {
+//   return dossierPrincipal.nom;
+// };
 
-// console.log(afficherDossier());
+// // console.log(afficherDossier());
 
-const afficherDossierIteratif = () => {
-  console.log(dossierPrincipal.nom);
-  for (let dossier of dossierPrincipal.contenu) {
-    console.log(dossier.nom);
-  }
-};
-afficherDossierIteratif();
+// const afficherDossierIteratif = () => {
+//   console.log(dossierPrincipal.nom);
+//   for (let dossier of dossierPrincipal.contenu) {
+//     console.log(dossier.nom);
+//   }
+// };
+// afficherDossierIteratif();
+
+// const afficherDossierRecursif = (dossier) => {
+//   if (dossier.contenu === undefined) {
+//     return;
+//   }
+//   for (let item of dossier.contenu) {
+//     console.log(item.nom);
+//     afficherDossierRecursif(item);
+//   }
+// };
+// afficherDossierRecursif(dossierPrincipal);
 
 const afficherDossierRecursif = (dossier) => {
-  if (dossier.contenu === undefined) {
+  if (dossier.nom === undefined) {
     return;
   }
   for (let item of dossier.contenu) {
     console.log(item.nom);
-    afficherDossierRecursif(item);
+    afficherDossierRecursif(item.nom);
   }
 };
 afficherDossierRecursif(dossierPrincipal);
